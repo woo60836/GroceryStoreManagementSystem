@@ -46,7 +46,7 @@ public class MenuManager {
 		System.out.print("Price : ");
 		int Price = input.nextInt();
 		
-		System.out.print("Origin of Product : ");
+		System.out.print("Country of Origin : ");
 		String ProductOrigin = input.next();
 		
 		System.out.print("Product No. : ");
