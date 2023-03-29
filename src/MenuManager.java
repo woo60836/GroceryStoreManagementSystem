@@ -16,42 +16,58 @@ public class MenuManager {
 			System.out.println("6. Exit");
 			System.out.print("Select one number between 1-6 : ");
 			num = input.nextInt(); 
-
-			switch(num) {
-			case 1:
-				System.out.print("Food Type : ");
-				String FoodType = input.next();
-
-				System.out.print("Food Name : ");
-				String FoodName = input.next();	
-				
-				System.out.print("Price : ");
-				int Price = input.nextInt();
-				
-				System.out.print("Country of Origin : ");
-				String Origin = input.next();
-				
-				System.out.print("Product No. : ");
-				int ProductNo = input.nextInt();
-				break;
-				
-			case 2:
-				System.out.print("Product.No : ");
-				int ProductNo2 = input.nextInt();
-				break;
-				
-			case 3:
-				System.out.println("Product.No : ");
-				int ProductNo3 = input.nextInt();
-				break;
-				
-			case 4:
-				System.out.println("Product.No : ");
-				int ProductNo4 = input.nextInt();
-				break;
-				
+			if (num == 1) {
+				AddGrocery();
+			}
+			else if (num == 2) {
+				DeleteGrocery();
+			}
+			else if (num == 3) {
+				EditGrocery();
+			}
+			else if (num == 4) {
+				ViewGrocery();
+			}
+			else {
+				continue;
 			}
 		}
 
+	}
+	
+	public static void AddGrocery() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Food Type : ");
+		String FoodType = input.next();
+		
+		System.out.print("Food Name : ");
+		String FoodName = input.next();
+		
+		System.out.print("Price : ");
+		int Price = input.nextInt();
+		
+		System.out.print("Origin of Product : ");
+		String ProductOrigin = input.next();
+		
+		System.out.print("Product No. : ");
+		Double ProductNo = input.nextDouble();
+	}
+	
+	public static void DeleteGrocery() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Product No. : ");
+		Double ProductNo = input.nextDouble();
+	}
+
+	public static void EditGrocery() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Product No. : ");
+		Double ProductNo = input.nextDouble();
+	}
+	
+	public static void ViewGrocery() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Product No. : ");
+		Double ProductNo = input.nextDouble();
 	}
 }
