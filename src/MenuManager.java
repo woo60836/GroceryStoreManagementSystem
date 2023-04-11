@@ -50,24 +50,24 @@ public class MenuManager {
 		String ProductOrigin = input.next();
 		
 		System.out.print("Product No. : ");
-		Double ProductNo = input.nextDouble();
+		int ProductNo = input.nextInt();
 	}
 	
 	public static void DeleteGrocery() {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Product No. : ");
-		Double ProductNo = input.nextDouble();
+		int ProductNo = input.nextInt();
 	}
 
 	public static void EditGrocery() {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Product No. : ");
-		Double ProductNo = input.nextDouble();
+		int ProductNo = input.nextInt();
 	}
 	
 	public static void ViewGrocery() {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Product No. : ");
-		Double ProductNo = input.nextDouble();
+		int ProductNo = input.nextInt();
 	}
 }
