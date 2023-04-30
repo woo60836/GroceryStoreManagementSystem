@@ -12,7 +12,7 @@ public class MenuManager {
 			System.out.println("1. Add Grocery"); // food type, food name, price, origin, prduct no.
 			System.out.println("2. Delete Grocery");
 			System.out.println("3. Edit Grocery");
-			System.out.println("4. View Grocery");
+			System.out.println("4. View Groceries");
 			System.out.println("5. Show a Menu");
 			System.out.println("6. Exit");
 			System.out.print("Select one number between 1-6 : ");
@@ -27,7 +27,7 @@ public class MenuManager {
 				grocerymanager.EditGrocery();
 			}
 			else if (num == 4) {
-				grocerymanager.ViewGrocery();
+				grocerymanager.ViewGroceries();
 			}
 			else {
 				continue;
