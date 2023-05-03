@@ -14,13 +14,18 @@ public class Grocery {
 	public Grocery() {
 	}
 
-	public Grocery(String type, String name, int price, String country, int productno) {
+	public Grocery(GroceryKind kind, String type, String name, int price, String country, int productno) {
 		super();
+		this.kind = kind;
 		this.type = type;
 		this.name = name;
 		this.price = price;
 		this.country = country;
 		this.productno = productno;
+	}
+	
+	public Grocery(GroceryKind kind) {
+		this.kind = kind;
 	}
 
 	public GroceryKind getKind() {
@@ -71,9 +76,25 @@ public class Grocery {
 		this.productno = productno;
 	}
 
+	
 	public void printinfo() {
-		System.out.println("type:" + type + " // name:" + name + " // price:" + price + " // country:" + country + " // number:" + productno);
-
+		String skind = "none";
+		System.out.println("kind:" + skind + "type:" + type + " // name:" + name + " // price:" + price + " // country:" + country + " // number:" + productno);
+		switch (this.kind) {
+		case Fruits:
+			skind = "Fruits";
+			break;
+		case Vegetables:
+			skind = "Vegetables";
+			break;
+		case Seafoods:
+			skind = "Seafoods";
+			break;
+		case Beers:
+			skind = "Beers";
+			break;
+		default:		
+		}
 	}
 
 	public void getUserInput(Scanner input) {

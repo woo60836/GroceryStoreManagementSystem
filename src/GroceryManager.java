@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Grocery.Grocery;
+import Grocery.GroceryKind;
+import Grocery.FruitsGrocery;
+import Grocery.VegetablesGrocery;
+import Grocery.SeafoodsGrocery;
+import Grocery.BeersGrocery;
 
 public class GroceryManager {
 	ArrayList<Grocery> groceries = new ArrayList<Grocery>();
@@ -20,29 +25,29 @@ public class GroceryManager {
 			System.out.println("2 for Vegetables");
 			System.out.println("3 for Seafoods");
 			System.out.println("4 for Beers");
-			System.out.println("Select num for Grocery Kind between 1 and 4: ");
+			System.out.print("Select num for Grocery Kind between 1 and 4: ");
 			kind = input.nextInt();
 			
 			if (kind == 1) {
-				grocery = new Grocery();
+				grocery = new FruitsGrocery(GroceryKind.Fruits);
 				grocery.getUserInput(input);
 				groceries.add(grocery);
 				break;
 			}
 			else if (kind == 2) {
-				grocery = new Grocery();
+				grocery = new VegetablesGrocery(GroceryKind.Vegetables);
 				grocery.getUserInput(input);
 				groceries.add(grocery);
 				break;
 			}
 			else if (kind == 3) {
-				grocery = new Grocery();
+				grocery = new SeafoodsGrocery(GroceryKind.Seafoods);
 				grocery.getUserInput(input);
 				groceries.add(grocery);
 				break;
 			}
 			else if (kind == 4) {
-				grocery = new Grocery();
+				grocery = new BeersGrocery(GroceryKind.Beers);
 				grocery.getUserInput(input);
 				groceries.add(grocery);
 				break;

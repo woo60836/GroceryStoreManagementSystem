@@ -3,6 +3,11 @@ package Grocery;
 import java.util.Scanner;
 
 public class VegetablesGrocery extends Grocery {
+	
+	public VegetablesGrocery(GroceryKind kind) {
+		super(kind);
+	}
+	
 	public void getUserInput(Scanner input) {
 		System.out.print("Food Type : ");
 		String type = input.next();
@@ -23,5 +28,25 @@ public class VegetablesGrocery extends Grocery {
 		System.out.print("Product No : ");
 		int productno = input.nextInt();
 		this.setProductno(productno);
+	}
+	
+	public void printinfo() {
+		String skind = "none";
+		System.out.println("kind:" + skind + " // type:" + type + " // name:" + name + " // price:" + price + " // country:" + country + " // number:" + productno);
+		switch (this.kind) {
+		case Fruits:
+			skind = "Fruits";
+			break;
+		case Vegetables:
+			skind = "Vegetables";
+			break;
+		case Seafoods:
+			skind = "Seafoods";
+			break;
+		case Beers:
+			skind = "Beers";
+			break;
+		default:		
+		}
 	}
 }

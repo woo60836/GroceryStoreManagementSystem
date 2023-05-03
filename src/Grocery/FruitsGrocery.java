@@ -3,6 +3,10 @@ package Grocery;
 import java.util.Scanner;
 
 public class FruitsGrocery extends Grocery{
+	
+	public FruitsGrocery(GroceryKind kind) {
+		super(kind);
+	}
 
 	public void getUserInput(Scanner input) {
 		System.out.print("Food Type : ");
@@ -42,7 +46,7 @@ public class FruitsGrocery extends Grocery{
 		case Beers:
 			skind = "Beers";
 			break;
-		default:		
+		default:
 		}
 	}
 }
