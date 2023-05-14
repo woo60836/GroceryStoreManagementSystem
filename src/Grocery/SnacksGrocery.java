@@ -2,12 +2,12 @@ package Grocery;
 
 import java.util.Scanner;
 
-public class VegetablesGrocery extends Grocery implements GroceryInput {
-	
-	public VegetablesGrocery(GroceryKind kind) {
+public class SnacksGrocery extends Grocery implements GroceryInput {
+
+	public SnacksGrocery(GroceryKind kind) {
 		super(kind);
 	}
-	
+
 	public void getUserInput(Scanner input) {
 
 		System.out.print("Food Name : ");
@@ -28,16 +28,16 @@ public class VegetablesGrocery extends Grocery implements GroceryInput {
 				this.setDiscount(0);
 				break;
 			}
-			else {	
+			else {
 			}
 		}
 		
 		char answer = 'x';
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer !='N') {
-			System.out.print("Does it have an expiration date? (Y/N) : ");
+			System.out.print("Does it have an appropriate consumption date? (Y/N) : ");
 			answer = input.next().charAt(0);
 			if(answer == 'y'||answer == 'Y') {
-				System.out.print("expiration date : ");
+				System.out.print("Appropriate consumption date : ");
 				String edate = input.next();
 				this.setEdate(edate);
 				break;

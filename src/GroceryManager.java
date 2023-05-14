@@ -2,14 +2,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Grocery.Grocery;
+import Grocery.GroceryInput;
 import Grocery.GroceryKind;
 import Grocery.FruitsGrocery;
 import Grocery.VegetablesGrocery;
-import Grocery.SeafoodsGrocery;
+import Grocery.SnacksGrocery;
 import Grocery.BeersGrocery;
 
 public class GroceryManager {
-	ArrayList<Grocery> groceries = new ArrayList<Grocery>();
+	ArrayList<GroceryInput> groceries = new ArrayList<GroceryInput>();
 	Grocery grocery;
 	Scanner input;
 	
@@ -19,41 +20,41 @@ public class GroceryManager {
 
 	public void AddGrocery() {
 		int kind = 0;
-		Grocery grocery;
+		GroceryInput groceryInput;
 		while (kind != 1 && kind != 2 && kind != 3 && kind != 4) {
 			System.out.println("1 for Fruits");
 			System.out.println("2 for Vegetables");
-			System.out.println("3 for Seafoods");
+			System.out.println("3 for Snacks");
 			System.out.println("4 for Beers");
-			System.out.print("Select num for Grocery Kind between 1 and 4: ");
+			System.out.print("Select num for Grocery Kind between 1 and 4 : ");
 			kind = input.nextInt();
 			
 			if (kind == 1) {
-				grocery = new FruitsGrocery(GroceryKind.Fruits);
-				grocery.getUserInput(input);
-				groceries.add(grocery);
+				groceryInput = new FruitsGrocery(GroceryKind.Fruits);
+				groceryInput.getUserInput(input);
+				groceries.add(groceryInput);
 				break;
 			}
 			else if (kind == 2) {
-				grocery = new VegetablesGrocery(GroceryKind.Vegetables);
-				grocery.getUserInput(input);
-				groceries.add(grocery);
+				groceryInput = new VegetablesGrocery(GroceryKind.Vegetables);
+				groceryInput.getUserInput(input);
+				groceries.add(groceryInput);
 				break;
 			}
 			else if (kind == 3) {
-				grocery = new SeafoodsGrocery(GroceryKind.Seafoods);
-				grocery.getUserInput(input);
-				groceries.add(grocery);
+				groceryInput = new SnacksGrocery(GroceryKind.Snacks);
+				groceryInput.getUserInput(input);
+				groceries.add(groceryInput);
 				break;
 			}
 			else if (kind == 4) {
-				grocery = new BeersGrocery(GroceryKind.Beers);
-				grocery.getUserInput(input);
-				groceries.add(grocery);
+				groceryInput = new BeersGrocery(GroceryKind.Beers);
+				groceryInput.getUserInput(input);
+				groceries.add(groceryInput);
 				break;
 			}
 			else {
-				System.out.print("Select num for Grocery Kind between 1 and 4: ");
+				System.out.print("Select num for Grocery Kind between 1 and 4 : ");
 			}
 		}
 	}
@@ -83,8 +84,8 @@ public class GroceryManager {
 		System.out.print("Product No : ");
 		int ProductNo = input.nextInt();
 		for (int i = 0; i<groceries.size();i++) {
-			Grocery grocery = groceries.get(i);
-			if (grocery.getProductno() == ProductNo) {
+			GroceryInput groceryInput = groceries.get(i);
+			if (groceryInput.getProductno() == ProductNo) {
 				int num = -1;
 				while (num != 6) {
 					System.out.println("**Grocery Info Edit Menu**");
@@ -96,30 +97,32 @@ public class GroceryManager {
 					System.out.println("6. Exit");
 					System.out.print("Select one number between 1-6 : ");
 					num = input.nextInt();
+					
 					if(num == 1) {
-						System.out.print("Food Type : ");
-						String type = input.next();
-						grocery.setType(type);
-					}
-					else if(num == 2) {
 						System.out.print("Food Name : ");
 						String name = input.next();	
-						grocery.setName(name);
+						groceryInput.setName(name);
+					}
+					
+					else if(num == 2) {
+						System.out.print("Discount rate : ");
+						int discount = input.nextInt();
+						groceryInput.setDiscount(discount);
 					}
 					else if(num == 3) {
 						System.out.print("Price : ");
 						int price = input.nextInt();
-						grocery.setPrice(price);
+						groceryInput.setPrice(price);
 					}
 					else if(num == 4) {
 						System.out.print("Country of Origin : ");
 						String country = input.next();
-						grocery.setCountry(country);
+						groceryInput.setCountry(country);
 					}
 					else if(num == 5) {
 						System.out.print("Product No : ");
 						int productno = input.nextInt();
-						grocery.setProductno(productno);
+						groceryInput.setProductno(productno);
 					}
 					else {
 						continue;

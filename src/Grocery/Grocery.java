@@ -2,26 +2,37 @@ package Grocery;
 
 import java.util.Scanner;
 
-public class Grocery {
+public abstract class Grocery {
 
 	protected GroceryKind kind = GroceryKind.Fruits;
-	protected String type;
+	protected int discount;
 	protected String name;
 	protected int price;
 	protected String country;
 	protected int productno;
+	protected String edate;
 
 	public Grocery() {
 	}
 
-	public Grocery(GroceryKind kind, String type, String name, int price, String country, int productno) {
+	public Grocery(GroceryKind kind, int discount, String name, int price, String country, int productno, String edate) {
 		super();
 		this.kind = kind;
-		this.type = type;
+		this.discount = discount;
 		this.name = name;
 		this.price = price;
 		this.country = country;
 		this.productno = productno;
+		this.edate = edate;
+		
+	}
+	
+	public String getEdate() {
+		return edate;
+	}
+	
+	public void setEdate(String edate) {
+		this.edate = edate;
 	}
 	
 	public Grocery(GroceryKind kind) {
@@ -36,12 +47,12 @@ public class Grocery {
 		this.kind = kind;
 	}
 
-	public String getType() {
-		return type;
+	public int getDiscount() {
+		return discount;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setDiscount(int discount) {
+		this.discount = discount;
 	}
 
 	public String getName() {
@@ -77,46 +88,5 @@ public class Grocery {
 	}
 
 	
-	public void printinfo() {
-		String skind = "none";
-		System.out.println("kind:" + skind + "type:" + type + " // name:" + name + " // price:" + price + " // country:" + country + " // number:" + productno);
-		switch (this.kind) {
-		case Fruits:
-			skind = "Fruits";
-			break;
-		case Vegetables:
-			skind = "Vegetables";
-			break;
-		case Seafoods:
-			skind = "Seafoods";
-			break;
-		case Beers:
-			skind = "Beers";
-			break;
-		default:		
-		}
-	}
-
-	public void getUserInput(Scanner input) {
-		System.out.print("Food Type : ");
-		String type = input.next();
-		this.setType(type);
-
-		System.out.print("Food Name : ");
-		String name = input.next();
-		this.setName(name);
-
-		System.out.print("Price : ");
-		int price = input.nextInt();
-		this.setPrice(price);
-
-		System.out.print("Country of Origin : ");
-		String country = input.next();
-		this.setCountry(country);
-
-		System.out.print("Product No : ");
-		int productno = input.nextInt();
-		this.setProductno(productno);
-	}
-
+	public abstract void printinfo(); 
 }
