@@ -2,6 +2,8 @@ package Grocery;
 
 import java.util.Scanner;
 
+import exception.CountryFormatException;
+
 public interface GroceryInput {
 	
 	public int getProductno();
@@ -12,7 +14,7 @@ public interface GroceryInput {
 	
 	public void setPrice(int price);
 	
-	public void setCountry(String country);
+	public void setCountry(String country) throws CountryFormatException;
 	
 	public void setProductno(int productno);
 	

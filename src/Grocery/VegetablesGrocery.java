@@ -2,6 +2,8 @@ package Grocery;
 
 import java.util.Scanner;
 
+import exception.CountryFormatException;
+
 public class VegetablesGrocery extends Grocery implements GroceryInput {
 	
 	public VegetablesGrocery(GroceryKind kind) {
@@ -56,7 +58,12 @@ public class VegetablesGrocery extends Grocery implements GroceryInput {
 
 		System.out.print("Country of Origin : ");
 		String country = input.next();
-		this.setCountry(country);
+		try {
+			this.setCountry(country);
+		} catch (CountryFormatException e) {
+			System.out.println("Incorrect Country Format. Put the country that contains 'From'.");
+			e.printStackTrace();
+		}
 
 		System.out.print("Product No : ");
 		int productno = input.nextInt();
