@@ -78,7 +78,7 @@ public abstract class Grocery implements GroceryInput {
 	}
 
 	public void setCountry(String country) throws CountryFormatException {
-		if (!country.contains("F") && !country.equals("")) {
+		if (!country.contains("->") && !country.equals("")) {
 			throw new CountryFormatException();
 		}
 		this.country = country;
@@ -115,13 +115,13 @@ public abstract void printinfo();
 	
 	public void setGroceryCountry(Scanner input) {
 		String country = "";
-		while (!country.contains("F")) {
+		while (!country.contains("->")) {
 			System.out.print("Country of Origin : ");
 			country = input.next();
 			try {
 				this.setCountry(country);
 			} catch (CountryFormatException e) {
-				System.out.println("Incorrect Country Format. Put the country that contains 'From'.");
+				System.out.println("Incorrect Country Format. Put the country that contains '->'.");
 			}
 		}
 	}

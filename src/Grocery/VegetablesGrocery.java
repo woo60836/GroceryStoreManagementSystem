@@ -61,7 +61,7 @@ public class VegetablesGrocery extends Grocery implements GroceryInput {
 		try {
 			this.setCountry(country);
 		} catch (CountryFormatException e) {
-			System.out.println("Incorrect Country Format. Put the country that contains 'From'.");
+			System.out.println("Incorrect Country Format. Put the country that contains '->'.");
 			e.printStackTrace();
 		}
 
