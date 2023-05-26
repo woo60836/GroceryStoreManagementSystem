@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -10,10 +11,15 @@ import Grocery.VegetablesGrocery;
 import Grocery.SnacksGrocery;
 import Grocery.BeersGrocery;
 
-public class GroceryManager {
+public class GroceryManager implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2541376809500541596L;
+	
 	ArrayList<GroceryInput> groceries = new ArrayList<GroceryInput>();
 	Grocery grocery;
-	Scanner input;
+	transient Scanner input;
 
 	GroceryManager(Scanner input) {
 		this.input = input;

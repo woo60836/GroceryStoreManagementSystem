@@ -56,14 +56,17 @@ public class VegetablesGrocery extends Grocery implements GroceryInput {
 		int price = input.nextInt();
 		this.setPrice(price);
 
-		System.out.print("Country of Origin : ");
-		String country = input.next();
-		try {
-			this.setCountry(country);
-		} catch (CountryFormatException e) {
-			System.out.println("Incorrect Country Format. Put the country that contains '->'.");
-			e.printStackTrace();
-		}
+		boolean validCountry = false;
+	    while (!validCountry) {
+	        System.out.print("Country of Origin : ");
+	        String country = input.next();
+	        try {
+	            this.setCountry(country);
+	            validCountry = true;  // 입력이 성공적으로 처리되었으면 반복문을 종료합니다.
+	        } catch (CountryFormatException e) {
+	            System.out.println("Incorrect Country Format. Put the country that contains '->'.");
+	        }
+	    }
 
 		System.out.print("Product No : ");
 		int productno = input.nextInt();

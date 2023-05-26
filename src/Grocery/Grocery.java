@@ -1,11 +1,17 @@
 package Grocery;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.CountryFormatException;
 
-public abstract class Grocery implements GroceryInput {
+public abstract class Grocery implements GroceryInput, Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 250124063227559645L;
+	
 	protected GroceryKind kind = GroceryKind.Fruits;
 	protected int discount;
 	protected String name;
@@ -78,7 +84,7 @@ public abstract class Grocery implements GroceryInput {
 	}
 
 	public void setCountry(String country) throws CountryFormatException {
-		if (!country.contains("->") && !country.equals("")) {
+		if (!country.contains("->")) {
 			throw new CountryFormatException();
 		}
 		this.country = country;
