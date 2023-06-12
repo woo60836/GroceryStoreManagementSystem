@@ -3,6 +3,8 @@ package gui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import manager.GroceryManager;
+
 public class WindowFrame extends JFrame {
 
 	MenuSelection menuselection;
@@ -10,16 +12,19 @@ public class WindowFrame extends JFrame {
 	GroceryViewer groceryviewer;
 	GroceryManager groceryManager;
 	
-	public WindowFrame() {
-		this.menuselection = new MenuSelection(this);
-		this.groceryadder = new GroceryAdder(this);
-		this.groceryviewer = new GroceryViewer(this);
-		
+	public WindowFrame(GroceryManager groceryManager) {
 		this.setSize(500, 300);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setTitle("My Frame");
+		
+		this.groceryManager = groceryManager;
+		menuselection = new MenuSelection(this);
+		groceryadder = new GroceryAdder(this);
+		groceryviewer = new GroceryViewer(this, this.groceryManager);
 		
 
-		this.setupPanel(menuselection);
+
+		this.add(menuselection);
 		
 		this.setVisible(true);
 

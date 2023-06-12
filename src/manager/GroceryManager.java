@@ -1,3 +1,4 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -151,6 +152,14 @@ public class GroceryManager implements Serializable {
 			for(int i=0;i<groceries.size();i++) {
 				groceries.get(i).printinfo();
 			}
+		}
+		
+		public int size() {
+			return groceries.size();
+		}
+		
+		public GroceryInput get(int index) {
+			return (Grocery) groceries.get(index);
 		}
 
 		public void showEditMenu() {

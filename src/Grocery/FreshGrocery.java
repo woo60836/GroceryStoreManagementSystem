@@ -24,7 +24,7 @@ public class FreshGrocery extends Grocery {
 	public void setGroceryDatewithYN(Scanner input) {
 		char answer = 'x';
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer !='N') {
-			System.out.print("Does it have an expiration date? (Y/N) : ");
+			System.out.print("Does it have an expiration date? (Y/N) :");
 			answer = input.next().charAt(0);
 			if(answer == 'y'||answer == 'Y') {
 				System.out.print("expiration date : ");

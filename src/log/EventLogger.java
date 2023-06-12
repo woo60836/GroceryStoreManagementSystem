@@ -1,4 +1,4 @@
-package log;
+ package log;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,7 +13,7 @@ public class EventLogger {
 	FileHandler filehandler;
 	LogManager logmanager;
 	Logger logger;
-
+	
 	public EventLogger(String fileName) {
 		try {
 			logmanager = LogManager.getLogManager();
@@ -21,15 +21,15 @@ public class EventLogger {
 			filehandler = new FileHandler(fileName);
 			filehandler.setFormatter(new SimpleFormatter());
 			logger.addHandler(filehandler);
-
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
+	
 	public void log(String logMessage) {
 		logger.info(logMessage);
 	}
-
+	
 }

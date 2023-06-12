@@ -16,7 +16,7 @@ public class PackagedGrocery extends Grocery {
 	public void setGroceryDatewithYN(Scanner input) {
 		char answer = 'x';
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer !='N') {
-			System.out.print("Does it have an appropriate consumption date? (Y/N) : ");
+			System.out.print("Does it have an appropriate consumption date? (Y/N) :");
 			answer = input.next().charAt(0);
 			if(answer == 'y'||answer == 'Y') {
 				System.out.print("appropriate consumption date : ");

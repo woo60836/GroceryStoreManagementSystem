@@ -67,7 +67,7 @@ public class VegetablesGrocery extends Grocery implements GroceryInput {
 	            System.out.println("Incorrect Country Format. Put the country that contains '->'.");
 	        }
 	    }
-
+	    
 		System.out.print("Product No : ");
 		int productno = input.nextInt();
 		this.setProductno(productno);

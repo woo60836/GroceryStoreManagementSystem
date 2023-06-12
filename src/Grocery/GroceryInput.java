@@ -10,6 +10,12 @@ public interface GroceryInput {
 	
 	public void setName(String name);
 	
+	public String getName();
+	
+	public int getPrice();
+	
+	public String getCountry();
+	
 	public void setDiscount(int discount);
 	
 	public void setPrice(int price);
